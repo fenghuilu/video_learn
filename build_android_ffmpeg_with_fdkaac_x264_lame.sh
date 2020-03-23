@@ -13,7 +13,7 @@ ANDROID_API=29
 export CFLAGS="-D__ANDROID_API__=$ANDROID_API"
 export CXXFLAGS="-D__ANDROID_API__=$ANDROID_API"
 
-FDK_AAC_PATH=/home/feng/MediaLearnDir/fdk-aac-2.0.0/android/armv7a
+FDK_AAC_PATH=/home/feng/MediaLearnDir/fdk-aac-2.0.0/android/armv7-a
 LAME_PATH=/home/feng/MediaLearnDir/lame-3.100/android/armv7-a
 X264_PATH=/home/feng/MediaLearnDir/x264/android/armv7-a
 
@@ -24,17 +24,15 @@ echo "Compiling FFmpeg for $CPU"
 --disable-shared \
 --enable-static \
 --disable-stripping \
---disable-ffmpeg \
+--enable-ffmpeg \
 --disable-ffplay \
---disable-ffserver \
 --disable-ffprobe \
 --disable-avdevice \
 --disable-devices \
 --disable-indevs \
 --disable-outdevs \
 --disable-debug \
---disable-asm \
---disable-yasm \
+--disable-x86asm \
 --disable-doc \
 --enable-small \
 --enable-dct \
@@ -71,6 +69,7 @@ echo "Compiling FFmpeg for $CPU"
 --disable-protocols \
 --enable-protocol=rtmp \
 --enable-protocol=file \
+--enable-gpl \
 --enable-encoder=libfdk_aac \
 --enable-libfdk_aac \
 --enable-muxer=h264 \
@@ -88,6 +87,7 @@ echo "Compiling FFmpeg for $CPU"
 --cpu=$CPU \
 --enable-cross-compile \
 --sysroot=$SYSROOT \
+--prefix=$PREFIX \
 $ADDITIONAL_CONFIGURE_FLAG
 
 make clean
