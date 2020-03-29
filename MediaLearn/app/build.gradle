@@ -15,7 +15,11 @@ android {
                 cFlags "-DSTDC_HEADERS"
             }
         }
+        ndk{
+            abiFilters 'armeabi-v7a'
+        }
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,8 +32,17 @@ android {
             version "3.10.2"
         }
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // alternatively, just ViewModel
+    implementation "android.arch.lifecycle:viewmodel:2.2.0"
+// alternatively, just LiveData
+    implementation "android.arch.lifecycle:livedata:2.2.0"
 }
