@@ -10,8 +10,10 @@ const char *gethahaFFmpegConfig() {
 void init(){
 //    avcodec_register_all();
 }
-//extern "C" JNIEXPORT jstring
-//JNICALL
-//Java_com_feng_medialearn_FFplayer_getFFmpegConfig(JNIEnv *env, jobject thiz) {
-//    return env->NewStringUTF(avcodec_configuration());
-//}
+
+
+extern "C" JNIEXPORT jstring
+JNICALL
+Java_com_feng_medialearn_FFplayer_getFFmpegConfig(JNIEnv *env, jobject thiz) {
+    return env->NewStringUTF(gethahaFFmpegConfig());
+}
