@@ -2,12 +2,6 @@ package com.feng.medialearn;
 
 public class FengPlayer {
     static {
-//        System.loadLibrary("avutil");
-//        System.loadLibrary("avcodec");
-//        System.loadLibrary("avformat");
-//        System.loadLibrary("swscale");
-//        System.loadLibrary("swresample");
-//        System.loadLibrary("avfilter");
         System.loadLibrary("FengPlayer");
     }
     private static FengPlayer mInstance;

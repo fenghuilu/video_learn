@@ -7,8 +7,8 @@
 
 #include "VideoFrame.h"
 
-int size;
-VideoFrame *head;
+int VideoFrameSize;
+VideoFrame *VideoFrameHead;
 void push(VideoFrame *videoFrame);
 int pop(VideoFrame *videoFrame);
 

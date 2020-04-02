@@ -8,8 +8,8 @@
 
 #include "AudioFrame.h"
 
-int size;
-AudioFrame *head;
+int AudioFrameSize;
+AudioFrame *AudioFrameHead;
 void push(AudioFrame *audioFrame);
 
 int pop(AudioFrame *audioFrame);

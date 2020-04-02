@@ -15,10 +15,8 @@ public class MainActivity extends Activity {
 
         // Example of a call to a native method
         TextView tv = findViewById(R.id.sample_text);
-//        tv.setText(LameUtils.getInstance().getLameVersion());
-//        tv.setText(FengPlayer.getInstance().getFFmpegConfig());
-        tv.setText(FFplayer.getInstance().getFFmpegConfig());
-       
+        tv.setText(FengPlayer.getInstance().getFFmpegConfig());
+
     }
 
 }

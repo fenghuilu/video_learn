@@ -19,7 +19,7 @@ AudioOutput *audioOutput;
 VideoOutput *videoOutput;
 AVSynchronizer *avSynchronizer;
 
-const char *gethahaFFmpegConfig();
+const char *getFFmpegConfig();
 void start();
 void play();
 void pause();

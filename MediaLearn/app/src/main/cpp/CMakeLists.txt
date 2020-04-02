@@ -9,115 +9,27 @@ cmake_minimum_required(VERSION 3.4.1)
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
-#设定一个目录
-#aux_source_directory(lame LAME_SRC_DIR)
-set(ffmpeg_lib_dir ${CMAKE_SOURCE_DIR}/../jniLibs)
 
-include_directories(include)
+include_directories(include/FFplayer)
 #将前面目录下所有的文件都添加进去
 #add_library(lame SHARED SimpleLame.cpp ${LAME_SRC_DIR})
 
-add_library(
-        avcodec
-        SHARED
-        IMPORTED
-)
 
-#指定库的位置
-set_target_properties(
-        avcodec
-        PROPERTIES IMPORTED_LOCATION
-        ${ffmpeg_lib_dir}/${ANDROID_ABI}/libavcodec.so
-)
-
-add_library(
-        avfilter
-        SHARED
-        IMPORTED
-)
-
-#指定库的位置
-set_target_properties(
-        avfilter
-        PROPERTIES IMPORTED_LOCATION
-        ${ffmpeg_lib_dir}/${ANDROID_ABI}/libavfilter.so
-)
-
-add_library(
-        avformat
-        SHARED
-        IMPORTED
-)
-
-#指定库的位置
-set_target_properties(
-        avformat
-        PROPERTIES IMPORTED_LOCATION
-        ${ffmpeg_lib_dir}/${ANDROID_ABI}/libavformat.so
-)
-
-add_library(
-        avutil
-        SHARED
-        IMPORTED
-)
-
-#指定库的位置
-set_target_properties(
-        avutil
-        PROPERTIES IMPORTED_LOCATION
-        ${ffmpeg_lib_dir}/${ANDROID_ABI}/libavutil.so
-)
-
-add_library(
-        swresample
-        SHARED
-        IMPORTED
-)
-
-#指定库的位置
-set_target_properties(
-        swresample
-        PROPERTIES IMPORTED_LOCATION
-        ${ffmpeg_lib_dir}/${ANDROID_ABI}/libswresample.so
-)
-
-add_library(
-        swscale
-        SHARED
-        IMPORTED
-)
-
-#指定库的位置
-set_target_properties(
-        swscale
-        PROPERTIES IMPORTED_LOCATION
-        ${ffmpeg_lib_dir}/${ANDROID_ABI}/libswscale.so
-)
-
+add_subdirectory(ffplayer)
 
 add_library( # Sets the name of the library.
-        FFplayer
-        #
-        #             # Sets the library as a shared library.
-        SHARED
-        #
-        #             # Provides a relative path to your source file(s).
-        FFplayer.cpp)
-
-#add_library( # Sets the name of the library.
-#             FengPlayer
-##
-##             # Sets the library as a shared library.
-#             SHARED
-##
-##             # Provides a relative path to your source file(s).
-#             FengPlayer.cpp)
+             FengPlayer
+#
+#             # Sets the library as a shared library.
+             SHARED
+#
+#             # Provides a relative path to your source file(s).
+             FengPlayer.cpp)
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
 # default, you only need to specify the name of the public NDK library
 # you want to add. CMake verifies that the library exists before
-# completing its build.
+## completing its build.
 
 find_library( # Sets the name of the path variable.
               log-lib
@@ -125,19 +37,7 @@ find_library( # Sets the name of the path variable.
 #               you want CMake to locate.
               log )
 
-# Specifies libraries CMake should link to your target library. You
-# can link multiple libraries, such as libraries you define in this
-# build script, prebuilt third-party libraries, or system libraries.
-
-target_link_libraries( # Specifies the target library.
-#                       FengPlayer
-                       FFplayer
-                       avcodec
-                       avfilter
-                       avformat
-                       avutil
-                       swresample
-                       swscale
-#                       # Links the target library to the log library
-#                       # included in the NDK.
-                       ${log-lib} )
+target_link_libraries(
+        FengPlayer
+        FFplayer
+        ${log-lib} )

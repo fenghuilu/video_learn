@@ -5,5 +5,5 @@
 extern "C" JNIEXPORT jstring
 JNICALL
 Java_com_feng_medialearn_FengPlayer_getFFmpegConfig(JNIEnv *env, jobject thiz) {
-    return env->NewStringUTF(gethahaFFmpegConfig());
+    return env->NewStringUTF(getFFmpegConfig());
 }
