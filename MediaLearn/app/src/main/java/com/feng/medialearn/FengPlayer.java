@@ -21,4 +21,5 @@ public class FengPlayer {
      * which is packaged with this application.
      */
     public native String getFFmpegConfig();
+    public native int openMedia(String filePath);
 }

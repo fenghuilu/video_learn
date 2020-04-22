@@ -15,7 +15,8 @@ set(ffmpeg_lib_dir ${CMAKE_SOURCE_DIR}/../jniLibs)
 
 aux_source_directory(. ffplayer_source_dir)
 
-include_directories(include)
+
+include_directories(${CMAKE_SOURCE_DIR}/include)
 #将前面目录下所有的文件都添加进去
 #add_library(lame SHARED SimpleLame.cpp ${LAME_SRC_DIR})
 

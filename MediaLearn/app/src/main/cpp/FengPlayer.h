@@ -7,4 +7,5 @@
 #define MEDIALEARN_FENGPLAYER_H
 #include <jni.h>
 #include "include/FFplayer/FFplayer.h"
+#define LOG_TAG "FengPlayer"
 #endif //MEDIALEARN_FENGPLAYER_H
