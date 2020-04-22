@@ -25,7 +25,7 @@ int openMedia(const char* filePath){
     }
     avformat_find_stream_info(avFormatContext,0);
     if(res == 0){
-        LOGD("avformat_find_stream_info success duration %lld ,nb_streams %lu",avFormatContext->duration,avFormatContext->nb_streams);
+        LOGD("avformat_find_stream_info success duration %" PRId64" ,nb_streams %" PRIu32,avFormatContext->duration,avFormatContext->nb_streams);
     } else {
         LOGD("avformat_find_stream_info failed %s",av_err2str(res));
 
