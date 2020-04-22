@@ -10,12 +10,23 @@ cmake_minimum_required(VERSION 3.4.1)
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
-include_directories(include)
-#将前面目录下所有的文件都添加进去
-#add_library(lame SHARED SimpleLame.cpp ${LAME_SRC_DIR})
+include_directories(${PROJECT_SOURCE_DIR}/ffplayerlibrary/src/main/cpp/)
 
 
-add_subdirectory(ffplayer)
+#add_subdirectory(ffplayer)
+#
+add_library(
+        FFplayer
+        SHARED
+        IMPORTED
+)
+
+#指定库的位置
+set_target_properties(
+        FFplayer
+        PROPERTIES IMPORTED_LOCATION
+        ${PROJECT_SOURCE_DIR}/../../../../ffplayerlibrary/libs/${ANDROID_ABI}/libFFplayer.so
+)
 
 add_library( # Sets the name of the library.
              FengPlayer

@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
         getExternalCacheDir().getAbsolutePath();
         Log.d("feng","getExternalCacheDir "+getExternalCacheDir().getAbsolutePath());
 //        tv.setText(FengPlayer.getInstance().getFFmpegConfig());
-        int res = FengPlayer.getInstance().openMedia(getExternalCacheDir().getAbsolutePath()+ File.separator+"test.flv");
+        int res = FengPlayer.getInstance().openMedia(getExternalCacheDir().getAbsolutePath()+ File.separator+"test.mp4");
         Log.d("feng","openMedia  res "+res);
         mainBinding.sampleText.setText(res+"");
     }

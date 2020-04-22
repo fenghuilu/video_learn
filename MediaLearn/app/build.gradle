@@ -63,7 +63,7 @@ dependencies {
 
     // optional - ReactiveStreams support for LiveData
     implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
-
+    implementation project(':ffplayerlibrary')
     // optional - Test helpers for LiveData
 //    testImplementation "androidx.arch.core:core-testing:$lifecycle_version"
 }
