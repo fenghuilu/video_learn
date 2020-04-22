@@ -25,7 +25,7 @@ add_library(
 set_target_properties(
         FFplayer
         PROPERTIES IMPORTED_LOCATION
-        ${PROJECT_SOURCE_DIR}/../../../../ffplayerlibrary/libs/${ANDROID_ABI}/libFFplayer.so
+        ${PROJECT_SOURCE_DIR}/../../../../prebuild_libs/${ANDROID_ABI}/libFFplayer.so
 )
 
 add_library( # Sets the name of the library.

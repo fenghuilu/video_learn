@@ -14,7 +14,7 @@ cmake_minimum_required(VERSION 3.4.1)
 
 #将前面目录下所有的文件都添加进去
 #add_library(lame SHARED SimpleLame.cpp ${LAME_SRC_DIR})
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../../../libs/${ANDROID_ABI})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/../../../../prebuild_libs/${ANDROID_ABI})
 
 set(ffmpeg_lib_dir ${CMAKE_SOURCE_DIR}/../jniLibs)
 
